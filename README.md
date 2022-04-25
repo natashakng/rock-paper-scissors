@@ -1,3 +1,3 @@
 # rock-paper-scissors
 
-Rock paper scissors game with computer picking randonmly.
+Rock paper scissors game with computer.
