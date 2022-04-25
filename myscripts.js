@@ -70,7 +70,7 @@ function game(){
     for (let i=0; i<5; i++){
         playerSelection = prompt("Enter rock, paper or scissors");
         computerSelection = computerPlay();
-        console.log(playerSelection+computerSelection)
+        //console.log(playerSelection+computerSelection)
         switch(playRound(playerSelection,computerSelection)){
             case 'player':
                 playerScore++;
@@ -80,9 +80,17 @@ function game(){
                 break;
         }
     }
-    return ("player scored "+playerScore+" computer scored "+compScore); 
+    //return ("player scored "+playerScore+" computer scored "+compScore); 
+    console.log(playerScore)
+    console.log(compScore)
+    if(compScore===playerScore){
+        return'tie game'
+    }else if(compScore<playerScore){
+        return'player wins'
+    }else{
+        return 'computer wins'
+    }
 }
 
-computerSelection = computerPlay();
 
 console.log(game())
