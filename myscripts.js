@@ -61,7 +61,28 @@ function playRound(playerSelection, computerSelection){
     return winner;
 }
 
-const computerSelection = computerPlay();
-const playerSelection = prompt("Enter rock, paper or scissors");
+function game(){
+    let playerScore = 0
+    let compScore = 0
+    let playerSelection
+    let computerSelection
+    
+    for (let i=0; i<5; i++){
+        playerSelection = prompt("Enter rock, paper or scissors");
+        computerSelection = computerPlay();
+        console.log(playerSelection+computerSelection)
+        switch(playRound(playerSelection,computerSelection)){
+            case 'player':
+                playerScore++;
+                break;
+            case 'computer':
+                compScore++;
+                break;
+        }
+    }
+    return ("player scored "+playerScore+" computer scored "+compScore); 
+}
 
-console.log(computerSelection+playRound(playerSelection,computerSelection))
+computerSelection = computerPlay();
+
+console.log(game())
